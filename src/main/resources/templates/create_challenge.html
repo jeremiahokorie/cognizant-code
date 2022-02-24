@@ -1,0 +1,111 @@
+<!DOCTYPE html >
+<html lang="en" xmlns :th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Cognizant Coding Challange</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Solve</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Top3</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 col-md-6 container justify-content-center card">
+            <h3 class="text-center"> Create New Challenge</h3>
+            <div class="card-body">
+                <form th:action="@{/players}" th:object="${player}" method="post">
+                    <div class="form-group">
+                        <label>Enter </label>
+                        <input type="text"
+                               name="playerName"
+                               th:field="*{playerName}"
+                               class="form-control"
+                               placeholder="Enter Name"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task">Choose Task</label>
+                        <select class="form-control selectpicker" th:field="*{task}" id="task">
+                            <option value="">Nothing selected</option>
+                            <option th:each="task : ${T(com.jerryit.cognizantchallenge.enums.ProgrammingLanguage).values()}"
+                                    th:value="${task}"
+                                    th:text="${task}">task
+                            </option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="language">Choose Language</label>
+                        <select class="form-control selectpicker" th:field="*{language}" id="language">
+                            <option value="">Nothing selected</option>
+                            <option th:each="language : ${T(com.jerryit.cognizantchallenge.enums.ProgrammingLanguage).values()}"
+                                    th:value="${language}"
+                                    th:text="${language}">language
+                            </option>
+
+                        </select>
+                    </div>
+
+<!--                    <div class="mt-5">description: <strong th:text="${player.description}"></strong></div>-->
+
+                    <div class="form-group">
+                        <label>Solution Code</label>
+                        <textarea class="form-control" name="script" placeholder="Enter Code" rows="3"></textarea>
+                    </div>
+
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+
+                    <br/>
+                    <br/>
+
+                    <div class="box-footer">
+                        <a th:href="@{/players}" class="btn btn-warning btn-sm mb-3">Back</a>
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
