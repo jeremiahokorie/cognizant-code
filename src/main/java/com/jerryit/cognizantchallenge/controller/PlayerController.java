@@ -47,13 +47,10 @@ public class PlayerController {
     public String savePlayer(@ModelAttribute("player") Player player){
        ApiResponse apiResponses =  apiService.execute(player.getScript(),player.getLanguage().toString());
        log.info("api resp {} ",apiResponses);
-
        player.setOutput(apiResponses.getOutput());
        player.setStatusCode(apiResponses.getStatusCode());
 
-        playerService.savePlayer(player);
-
-
+       playerService.savePlayer(player);
         return "redirect:/players";
     }
 
