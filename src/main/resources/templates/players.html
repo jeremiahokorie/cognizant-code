@@ -36,14 +36,6 @@
 </nav>
     <div class="container">
         <div class="row">
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-                </a>
-            </nav>
-
-        </div>
-        <div class="row">
             <div class="col-lg-3">
                 <tr/>
                 <tr/><tr/>
@@ -60,6 +52,7 @@
 
                 <th>NAME</th>
                 <th>SUCCESS SOLUTION</th>
+                <th>OUTPUT</th>
                 <th>PROGRAMMING LANGUAGE</th>
                 <th>TASKS</th>
             </tr>
@@ -68,6 +61,7 @@
                 <tr th:each = "player: ${players}">
                     <td th:text = "${player.playerName}"></td>
                     <td th:text = "${player.script}"></td>
+                    <td th:text = "${player.output}"></td>
                     <td th:text = "${player.language}"></td>
                     <td th:text = "${player.task}"></td>
                 </tr>

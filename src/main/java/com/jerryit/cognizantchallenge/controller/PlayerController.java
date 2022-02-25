@@ -46,14 +46,10 @@ public class PlayerController {
     @PostMapping("/players")
     public String savePlayer(@ModelAttribute("player") Player player){
        ApiResponse apiResponses =  apiService.execute(player.getScript(),player.getLanguage().toString());
-       log.info("api resp {} "+apiResponses);
+       log.info("api resp {} ",apiResponses);
 
-
-//        res ++ {} ApiResponse(output=Hello World!, statusCode=200, memory=7992, cpuTime=0.0)
-
-//       if (apiResponses !=null){
-//           challengeService.saveChallenge(challenge);
-//       }
+       player.setOutput(apiResponses.getOutput());
+       player.setStatusCode(apiResponses.getStatusCode());
 
         playerService.savePlayer(player);
 
