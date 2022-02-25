@@ -39,21 +39,23 @@
             <h3 class="text-center"> Create New Challenge</h3>
             <div class="card-body">
                 <form th:action="@{/players}" th:object="${player}" method="post">
-                    <div class="form-group">
+                    <div class="form-group" >
                         <label>Enter </label>
                         <input type="text"
                                name="playerName"
                                th:field="*{playerName}"
                                class="form-control"
+                               required
                                placeholder="Enter Name"/>
                     </div>
 
                     <div class="form-group">
                         <label for="task">Choose Task</label>
-                        <select class="form-control selectpicker" th:field="*{task}" id="task">
+                        <select class="form-control selectpicker" th:field="*{task}" id="task" required>
                             <option value="">Nothing selected</option>
                             <option th:each="task : ${T(com.jerryit.cognizantchallenge.model.enums.Task).values()}"
                                     th:value="${task}"
+
                                     th:text="${task}">task
                             </option>
 
@@ -62,7 +64,7 @@
 
                     <div class="form-group">
                         <label for="language">Choose Language</label>
-                        <select class="form-control selectpicker" th:field="*{language}" id="language">
+                        <select class="form-control selectpicker" th:field="*{language}" id="language" required>
                             <option value="">Nothing selected</option>
                             <option th:each="language : ${T(com.jerryit.cognizantchallenge.model.enums.ProgrammingLanguage).values()}"
                                     th:value="${language}"
@@ -80,7 +82,7 @@
                     </div>
                     <div class="form-group">
                         <label>Solution Code</label>
-                        <textarea class="form-control" name="script" placeholder="Enter Code" rows="3"></textarea>
+                        <textarea class="form-control" name="script" placeholder="Enter Code" required rows="3"></textarea>
                     </div>
 
 
