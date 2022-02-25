@@ -1,8 +1,8 @@
-package com.jerryit.cognizantchallenge.service.serviceImpl;
+package com.jerryit.cognizantchallenge.service.impl;
 
 
-import com.jerryit.cognizantchallenge.entity.Player;
-import com.jerryit.cognizantchallenge.repository.PlayerRepository;
+import com.jerryit.cognizantchallenge.persistent.entity.Player;
+import com.jerryit.cognizantchallenge.persistent.repository.PlayerRepository;
 import com.jerryit.cognizantchallenge.service.PlayerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

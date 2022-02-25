@@ -1,4 +1,4 @@
-package com.jerryit.cognizantchallenge.enums;
+package com.jerryit.cognizantchallenge.model.enums;
 
 
 public enum ProgrammingLanguage {

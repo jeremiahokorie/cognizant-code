@@ -1,18 +1,18 @@
 package com.jerryit.cognizantchallenge.controller;
 
 
-import com.jerryit.cognizantchallenge.domain.AppResponse;
-import com.jerryit.cognizantchallenge.entity.Player;
+import com.jerryit.cognizantchallenge.model.response.ApiResponse;
+import com.jerryit.cognizantchallenge.persistent.entity.Challenge;
+import com.jerryit.cognizantchallenge.persistent.entity.Player;
+import com.jerryit.cognizantchallenge.service.ApiService;
+import com.jerryit.cognizantchallenge.service.ChallengeService;
 import com.jerryit.cognizantchallenge.service.PlayerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 
 @Controller
@@ -21,6 +21,14 @@ public class PlayerController {
 
     @Autowired
     private PlayerService playerService;
+
+    @Autowired
+    private ApiService apiService;
+
+    @Autowired
+    ChallengeService challengeService;
+
+    private ApiResponse apiResponse;
 
     @GetMapping("/players")
     public String fetchAllPlayer(Model model){
@@ -37,27 +45,20 @@ public class PlayerController {
 
     @PostMapping("/players")
     public String savePlayer(@ModelAttribute("player") Player player){
+       ApiResponse apiResponses =  apiService.execute(player.getScript(),player.getLanguage().toString());
+       log.info("api resp {} "+apiResponses);
+
+
+//        res ++ {} ApiResponse(output=Hello World!, statusCode=200, memory=7992, cpuTime=0.0)
+
+//       if (apiResponses !=null){
+//           challengeService.saveChallenge(challenge);
+//       }
+
         playerService.savePlayer(player);
+
+
         return "redirect:/players";
-    }
-
-    private static void getResult(@RequestBody Player player)
-    {
-        final String uri = "https://api.jdoodle.com/v1/execute";
-        final String clientId = "93db56482846001f0e2ce523c83bb5aa";
-        final String clientSecrete = "8579ba0435230798b53e3397cb0292786ea2047c18184fc754a629be5b221c50";
-
-        RestTemplate restTemplate = new RestTemplate();
-        Player player1 = new Player();
-        player1.setClientId(clientId);
-        player1.setClientSecret(clientSecrete);
-        player1.setScript(player.getScript());
-        player1.setLanguage(player.getLanguage());
-        player1.setVersionIndex("0");
-
-        String result = restTemplate.getForObject(uri + player1,String.class);
-
-        System.out.println(result);
     }
 
 

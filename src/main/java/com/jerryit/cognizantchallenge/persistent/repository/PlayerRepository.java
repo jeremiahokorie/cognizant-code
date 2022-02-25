@@ -1,6 +1,6 @@
-package com.jerryit.cognizantchallenge.repository;
+package com.jerryit.cognizantchallenge.persistent.repository;
 
-import com.jerryit.cognizantchallenge.entity.Player;
+import com.jerryit.cognizantchallenge.persistent.entity.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

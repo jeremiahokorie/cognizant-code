@@ -1,11 +1,10 @@
-package com.jerryit.cognizantchallenge.entity;
+package com.jerryit.cognizantchallenge.persistent.entity;
 
-import com.jerryit.cognizantchallenge.enums.ProgrammingLanguage;
-import com.jerryit.cognizantchallenge.enums.Task;
+import com.jerryit.cognizantchallenge.model.enums.ProgrammingLanguage;
+import com.jerryit.cognizantchallenge.model.enums.Task;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,13 +23,11 @@ public class Player {
     private String playerName;
     private Task task;
     private ProgrammingLanguage language;
-    private String script;
-    private String solution;
     private String description;
-    private transient String clientId;
-    private transient String clientSecret;
-    private transient String versionIndex;
-
-
+    private String script;
+    private String output;
+    private Integer statusCode;
+    private Integer memory;
+    private Integer cpuTime;
 
 }

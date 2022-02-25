@@ -1,4 +1,4 @@
-package com.jerryit.cognizantchallenge.domain;
+package com.jerryit.cognizantchallenge.model.response;
 
 
 import lombok.*;

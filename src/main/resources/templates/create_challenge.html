@@ -53,7 +53,7 @@
                         <label for="task">Choose Task</label>
                         <select class="form-control selectpicker" th:field="*{task}" id="task">
                             <option value="">Nothing selected</option>
-                            <option th:each="task : ${T(com.jerryit.cognizantchallenge.enums.ProgrammingLanguage).values()}"
+                            <option th:each="task : ${T(com.jerryit.cognizantchallenge.model.enums.Task).values()}"
                                     th:value="${task}"
                                     th:text="${task}">task
                             </option>
@@ -65,7 +65,7 @@
                         <label for="language">Choose Language</label>
                         <select class="form-control selectpicker" th:field="*{language}" id="language">
                             <option value="">Nothing selected</option>
-                            <option th:each="language : ${T(com.jerryit.cognizantchallenge.enums.ProgrammingLanguage).values()}"
+                            <option th:each="language : ${T(com.jerryit.cognizantchallenge.model.enums.ProgrammingLanguage).values()}"
                                     th:value="${language}"
                                     th:text="${language}">language
                             </option>
