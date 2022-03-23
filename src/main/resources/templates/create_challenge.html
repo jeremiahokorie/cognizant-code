@@ -10,7 +10,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a class="navbar-brand" href="/">Cognizant Coding Challange</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,8 +40,8 @@
             <h3 class="text-center"> Create New Challenge</h3>
             <div class="card-body">
                 <form th:action="@{/players}" th:object="${player}" method="post">
-                    <div class="form-group" >
-                        <label>Enter </label>
+                    <div class="form-group">
+                        <label>Enter Name</label>
                         <input type="text"
                                name="playerName"
                                th:field="*{playerName}"
@@ -55,7 +56,6 @@
                             <option value="">Nothing selected</option>
                             <option th:each="task : ${T(com.jerryit.cognizantchallenge.model.enums.Task).values()}"
                                     th:value="${task}"
-
                                     th:text="${task}">task
                             </option>
 
@@ -74,15 +74,17 @@
                         </select>
                     </div>
 
-                    <div class="mt-5"> <h5>Description</h5>
+                    <div class="mt-5"><h5>Description</h5>
                         <p>
-                            Welcome to our code validation system! Ensure you submit a proper printout code format for any of the selected language.
+                            Welcome to our code validation system! Ensure you submit a proper printout code format
+                            for any of the selected language.
                             If selected Java ensure you wrap your code in a class and main method before Submiting.
                         </p>
                     </div>
                     <div class="form-group">
                         <label>Solution Code</label>
-                        <textarea class="form-control" name="script" placeholder="Enter Code" required rows="3"></textarea>
+                        <textarea class="form-control" name="script" placeholder="Enter Code" required
+                                  rows="3"></textarea>
                     </div>
 
 
@@ -94,7 +96,6 @@
 
                     <br/>
                     <br/>
-
 
 
                 </form>

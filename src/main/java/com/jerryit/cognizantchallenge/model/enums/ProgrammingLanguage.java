@@ -2,12 +2,11 @@ package com.jerryit.cognizantchallenge.model.enums;
 
 
 public enum ProgrammingLanguage {
-    java,
-    react,
-    Python,
-    Vue,
-    GO,
-    php
+    JAVA,
+    REACT,
+    PYTHON,
+    VUE,
+    PHP
 
 
 }

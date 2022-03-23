@@ -49,6 +49,8 @@ public class PlayerController {
        log.info("api resp {} ",apiResponses);
        player.setOutput(apiResponses.getOutput());
        player.setStatusCode(apiResponses.getStatusCode());
+        player.setCpuTime(apiResponses.getCpuTime());
+        player.setMemory(apiResponses.getMemory());
 
        playerService.savePlayer(player);
         return "redirect:/players";

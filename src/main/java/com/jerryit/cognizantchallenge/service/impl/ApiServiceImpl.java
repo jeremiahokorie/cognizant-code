@@ -1,7 +1,7 @@
 package com.jerryit.cognizantchallenge.service.impl;
 
 import com.jerryit.cognizantchallenge.exception.CustomException;
-import com.jerryit.cognizantchallenge.model.config.apiConfig;
+import com.jerryit.cognizantchallenge.config.apiConfig;
 import com.jerryit.cognizantchallenge.model.request.ApiRequest;
 import com.jerryit.cognizantchallenge.model.response.ApiResponse;
 import com.jerryit.cognizantchallenge.service.ApiService;

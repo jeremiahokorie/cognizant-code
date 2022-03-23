@@ -1,4 +1,4 @@
-package com.jerryit.cognizantchallenge.model.config;
+package com.jerryit.cognizantchallenge.config;
 
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;

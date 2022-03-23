@@ -24,6 +24,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player createNewPlayer(Player player) {
+
         return playerRepository.save(player);
     }
 
@@ -45,6 +46,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player savePlayer(Player player) {
+
         return playerRepository.save(player);
 
     }
