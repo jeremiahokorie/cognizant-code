@@ -20,4 +20,5 @@ public class PlayerRequest implements Serializable {
 
     private String language;
     private String script;
+
 }

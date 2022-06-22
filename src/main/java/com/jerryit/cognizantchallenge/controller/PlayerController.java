@@ -1,6 +1,4 @@
 package com.jerryit.cognizantchallenge.controller;
-
-
 import com.jerryit.cognizantchallenge.model.response.ApiResponse;
 import com.jerryit.cognizantchallenge.persistent.entity.Challenge;
 import com.jerryit.cognizantchallenge.persistent.entity.Player;
@@ -73,7 +71,4 @@ public class PlayerController {
 //                .statusCode(200)
 //                .build());
 //    }
-
-
-
 }
